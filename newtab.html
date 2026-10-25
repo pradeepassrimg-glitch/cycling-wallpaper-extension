@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>New Tab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+<div class="layer" id="a"></div>
+<div class="layer" id="b"></div>
+<div class="shade"></div>
+
+<header class="top">
+  <a class="toplink" href="https://mail.google.com">Gmail</a>
+  <a class="toplink" href="https://www.google.com/imghp">Images</a>
+
+  <div class="apps-wrap">
+    <button id="appsBtn" class="icon-btn" type="button" aria-label="Apps" aria-expanded="false" title="Apps">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+        <g fill="currentColor">
+          <circle cx="5" cy="5" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="5" r="2"/>
+          <circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/>
+          <circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/>
+        </g>
+      </svg>
+    </button>
+    <div id="appsMenu" class="apps-menu" hidden>
+      <div class="apps-grid" id="appsGrid"></div>
+    </div>
+  </div>
+
+  <button id="account" class="icon-btn account" type="button" aria-label="Choose profile image" title="Choose profile image">
+    <img id="profileImage" alt="" hidden>
+    <svg id="profileDefault" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path fill="currentColor" d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2.25c-3.2 0-9 1.6-9 4.8V21h18v-1.95c0-3.2-5.8-4.8-9-4.8z"/>
+    </svg>
+  </button>
+  <input id="profilePicker" type="file" accept="image/*" hidden>
+</header>
+
+<main class="center">
+  <div class="google-logo" aria-label="Google">
+    <span>Google</span>
+  </div>
+
+  <form id="searchForm" class="searchbar" autocomplete="off">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path fill="currentColor" d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/>
+    </svg>
+    <input id="q" type="text" placeholder="Search the web or type a URL" aria-label="Search" autofocus>
+  </form>
+
+  <div class="shortcuts" id="shortcuts"></div>
+</main>
+
+<dialog id="dlg">
+  <form id="dlgForm" method="dialog">
+    <h2 id="dlgTitle">Add shortcut</h2>
+    <label>Name<input id="dlgName" type="text" maxlength="30" required></label>
+    <label>URL<input id="dlgUrl" type="text" placeholder="example.com" required></label>
+    <div class="dlg-actions">
+      <button id="dlgRemove" type="button" class="danger">Remove</button>
+      <span class="spacer"></span>
+      <button id="dlgCancel" type="button">Cancel</button>
+      <button type="submit" class="primary">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<button id="customizeBtn" type="button" aria-haspopup="dialog" aria-label="Customize this page" title="Customize this page">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm17.71-10.04a1 1 0 0 0 0-1.41l-2.51-2.51a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 2-1.66z"/></svg>
+</button>
+<dialog id="customizeDlg" class="customize-dialog">
+  <form id="customizeForm" method="dialog">
+    <h2>Customize this page</h2>
+    <label>Choose extra wallpaper images<input id="wallpaperPicker" type="file" accept="image/*" multiple></label>
+    <p class="hint">Images you select are saved in this browser and added to the wallpaper rotation.</p>
+    <div class="dlg-actions">
+      <button id="clearCustomWallpapers" type="button" class="danger">Clear added wallpapers</button>
+      <span class="spacer"></span>
+      <button id="customizeClose" type="button">Close</button>
+    </div>
+  </form>
+</dialog>
+<div id="msg"></div>
+<script src="newtab.js"></script>
+</body>
+</html>

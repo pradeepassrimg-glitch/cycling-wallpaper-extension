@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "My Cycling Wallpaper",
+  "version": "2.0",
+  "description": "Your own images as a crossfading wallpaper on the new tab page, with search, shortcuts and an apps menu. Fully local, no tracking.",
+  "permissions": ["favicon", "search"],
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  }
+}
