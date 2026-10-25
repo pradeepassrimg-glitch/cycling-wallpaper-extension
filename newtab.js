@@ -1,5 +1,5 @@
 // ---------- Settings ----------
-const SECONDS_PER_IMAGE = 30;    // how long each image stays
+const SECONDS_PER_IMAGE = 5;    // how long each image stays
 const FADE_SECONDS      = 2;     // crossfade length
 const SHUFFLE           = false; // true = random order
 const EXTENSIONS        = ["jpg", "jpeg", "png", "webp"];
